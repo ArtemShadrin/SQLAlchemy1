@@ -25,7 +25,7 @@ def orders():
         return jsonify(result), 200
 
 
-@app.route('/orders/<int:oid>', methods=['GET', 'POST', 'DELETE'])
+@app.route('/orders/<int:oid>', methods=['GET', 'PUT', 'DELETE'])
 def order_function(oid):
     if request.method == 'GET':
         order = model_orders.Order.query.get(oid)
