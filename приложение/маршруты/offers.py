@@ -25,7 +25,7 @@ def offers():
         return jsonify(result), 200
 
 
-@app.route('/offers/<int:oid>', methods=['GET', 'POST', 'DELETE'])
+@app.route('/offers/<int:oid>', methods=['GET', 'PUT', 'DELETE'])
 def offer_function(oid):
     if request.method == 'GET':
         offer = model_offers.Offer.query.get(oid)
