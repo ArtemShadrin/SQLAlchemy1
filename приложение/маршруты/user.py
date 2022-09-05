@@ -25,7 +25,7 @@ def users():
         return jsonify(result), 200
 
 
-@app.route('/users/<int:uid>', methods=['GET', 'POST', 'DELETE'])
+@app.route('/users/<int:uid>', methods=['GET', 'PUT', 'DELETE'])
 def user_function(uid):
     if request.method == 'GET':
         user = model_users.User.query.get(uid)
